@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Details - AnimeHub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🍿 AnimeHub</h1>
+        <p>Anime details</p>
+    </header>
+
+    <main>
+
+        <a href="index.html" class="back-button">← Back to Home</a>
+
+        <section class="anime-details">
+
+            <img
+               class="details-cover"
+               id="animeCover"
+               src="images/rezero.jpg"
+               alt="Re:Zero"
+           >
+            >
+
+            <div class="details-info">
+                <h2 id="animeTitle">Re:Zero</h2>
+
+                <p id="animeDescription">
+                   Subaru Natsuki finds himself transported to another world
+                   and discovers that he has a mysterious ability.
+                </p>
+             
+
+                <p><strong>Type:</strong> <span id="animeType">TV Series</span></p>
+                <p><strong>Status:</strong> <span id="animeStatus">Ongoing</span></p>
+                <p><strong>Episodes:</strong> <span id="animeEpisodes">50+</span></p>
+            </div>
+
+        </section>
+
+        <section class="episodes">
+    <h2>Episodes</h2>
+
+    <div class="episode-list" id="episodeList"></div>
+</section>
+            </div>
+        </section>
+
+   </main>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const animeName = params.get("anime");
+
+const animeData = {
+    rezero: {
+        title: "Re:Zero",
+        image: "images/rezero.jpg",
+        description: "Subaru Natsuki finds himself transported to another world and discovers a mysterious ability.",
+        type: "TV Series",
+        status: "Ongoing",
+        episodes: 100
+    },
+
+    naruto: {
+        title: "Naruto",
+        image: "images/naruto.jpg",
+        description: "Follow Naruto Uzumaki on his journey to become Hokage.",
+        type: "TV Series",
+        status: "Completed",
+        episodes: 520
+    },
+
+    dbs: {
+        title: "Dragon Ball Super",
+        image: "images/dbs.jpg",
+        description: "Goku and his friends face powerful new enemies.",
+        type: "TV Series",
+        status: "Completed",
+        episodes: 131
+    }
+};
+
+const anime = animeData[animeName] || animeData.rezero;
+
+const episodeList = document.getElementById("episodeList");
+
+for (let i = 1; i <= Number(anime.episodes); i++) {
+    const button = document.createElement("button");
+
+    button.textContent = "Episode " + i;
+
+    episodeList.appendChild(button);
+}
+
+document.getElementById("animeTitle").textContent = anime.title;
+
+const cover = document.getElementById("animeCover");
+cover.src = anime.image;
+cover.alt = anime.title;
+
+document.getElementById("animeDescription").textContent = anime.description;
+document.getElementById("animeType").textContent = anime.type;
+document.getElementById("animeStatus").textContent = anime.status;
+document.getElementById("animeEpisodes").textContent = anime.episodes;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeHub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🍿 AnimeHub</h1>
+        <p>Your anime world starts here.</p>
+    </header>
+
+    <main>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search anime...">
+        <button onclick="searchAnime()">Search</button>
+    </div>
+
+    <h2>Latest Anime</h2>
+
+    <div class="anime-grid" id="anime-grid">
+
+        <div class="anime-card">
+            <img class="anime-cover" src="images/rezero.jpg" alt="Re:Zero">
+            <h3>Re:Zero</h3>
+            <p>Subaru returns to a mysterious world.</p>
+            <button onclick="openAnime('rezero')">View Anime</button>
+        </div>
+
+        <div class="anime-card">
+            <img class="anime-cover" src="images/naruto.jpg" alt="Naruto">
+            <h3>Naruto</h3>
+            <p>Follow Naruto on his journey to become Hokage.</p>
+            <button onclick="openAnime('naruto')">View Anime</button>
+        </div>
+
+        <div class="anime-card">
+            <img class="anime-cover" src="images/dbs.jpg" alt="Dragon Ball Super">
+            <h3>Dragon Ball Super</h3>
+            <p>Goku and his friends face powerful new enemies.</p>
+            <button onclick="openAnime('dbs')">View Anime</button>
+        </div>
+
+        </main>
+
+        <script src="script.js"></script>
+</body>
+</html>
+
